@@ -2,7 +2,7 @@
 require "session.php";
 require "../koneksi.php";
 
-$id = $_GET['q'];
+$id = (isset($_GET['q']));
 
 $query = mysqli_query($con, "SELECT * FROM kategori WHERE id='$id'");
 $data = mysqli_fetch_array($query);
@@ -69,10 +69,22 @@ $data = mysqli_fetch_array($query);
             }
 
             if (isset($_POST['deleteBtn'])) {
+                $queryCheck = mysqli_query($con, "SELECT * FROM unit_mobil WHERE kategori_id='$id'");
+                $dataCount = mysqli_num_rows($queryCheck);
+
+                if ($dataCount > 0) {
+                    ?>
+                    <div class="alert alert-danger mt-3" role="alert">
+                        Kategori Tidak Dapat Dihapus karena didalamnya ada Unit Mobil
+                    </div>
+                <?php
+                    die();
+                }
+
                 $queryDelete = mysqli_query($con, "DELETE FROM kategori WHERE id='$id'");
 
                 if ($queryDelete) {
-                    ?>
+                ?>
                     <div class="alert alert-primary mt-3" role="alert">
                         Kategori Baru Berhasil diHapus
                     </div>

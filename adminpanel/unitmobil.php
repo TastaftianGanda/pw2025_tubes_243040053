@@ -2,7 +2,7 @@
 require "session.php";
 require "../koneksi.php";
 
-$query = mysqli_query($con, "SELECT * FROM unit_mobil");
+$query = mysqli_query($con, "SELECT a.*, b.nama AS nama_kategori FROM unit_mobil a JOIN kategori b ON a.kategori_id=b.id");
 $jumlahUnit = mysqli_num_rows($query);
 
 $queryKategori = mysqli_query($con, "SELECT * FROM kategori");
@@ -300,7 +300,7 @@ $queryKategori = mysqli_query($con, "SELECT * FROM kategori");
                         if ($queryTambah) {
                             ?>
                             <div class="alert alert-primary mt-3" role="alert">
-                                Produk
+                                Unit berhasil di Tambah
                             </div>
 
                             <meta http-equiv="refresh" content="2; url=unitmobil.php" />
@@ -350,12 +350,12 @@ $queryKategori = mysqli_query($con, "SELECT * FROM kategori");
                                     <tr>
                                         <td><?php echo $jumlah; ?></td>
                                         <td><?php echo $data['nama_kendaraan']; ?></td>
-                                        <td><?php echo $data['kategori_id']; ?></td>
+                                        <td><?php echo $data['nama_kategori']; ?></td>
                                         <td><?php echo $data['harga']; ?></td>
                                         <td><?php echo $data['ketersediaan_unit']; ?></td>
                                         <td>
-                                            <button class="btn btn-sm btn-info me-1">
-                                                <i class="fas fa-eye"></i>
+                                            <a href="unit-detail.php?q="><button class="btn btn-sm btn-info me-1">
+                                                    <i class="fas fa-eye"></i></a>
                                             </button>
                                             <button class="btn btn-sm btn-warning me-1">
                                                 <i class="fas fa-edit"></i>
