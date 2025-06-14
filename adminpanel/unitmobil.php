@@ -354,15 +354,10 @@ $queryKategori = mysqli_query($con, "SELECT * FROM kategori");
                                         <td><?php echo $data['harga']; ?></td>
                                         <td><?php echo $data['ketersediaan_unit']; ?></td>
                                         <td>
-                                            <a href="unit-detail.php?q="><button class="btn btn-sm btn-info me-1">
-                                                    <i class="fas fa-eye"></i></a>
-                                            </button>
-                                            <button class="btn btn-sm btn-warning me-1">
-                                                <i class="fas fa-edit"></i>
-                                            </button>
-                                            <button class="btn btn-sm btn-danger">
-                                                <i class="fas fa-trash"></i>
-                                            </button>
+                                            <!-- PERBAIKAN: Menambahkan ID unit mobil pada parameter q -->
+                                            <a href="unit-detail.php?q=<?php echo $data['id']; ?>" class="btn btn-sm btn-info me-1">
+                                                <i class="fas fa-eye"></i>
+                                            </a>
                                         </td>
                                     </tr>
                             <?php

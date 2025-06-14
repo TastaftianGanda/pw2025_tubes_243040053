@@ -105,7 +105,7 @@ $countUnit = mysqli_num_rows($queryUnit);
                                         <p class="card-text text-truncate"><?php echo $unit['detail']; ?></p>
                                         <p class="card-text text-harga"><?php echo $unit['harga']; ?>
                                         </p>
-                                        <a href="unit-detail.php?nama=asfasf" class="btn warna2 text-white">Detail Lebih Lanjut</a>
+                                        <a href="detail-mobil.php?nama=<?php echo urlencode($unit['nama_kendaraan']); ?>" class="btn warna2 text-white">Detail Lebih Lanjut</a>
                                     </div>
                                 </div>
                             </div>
