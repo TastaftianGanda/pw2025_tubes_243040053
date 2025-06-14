@@ -197,7 +197,7 @@ $jumlahKategori = mysqli_num_rows($queryKategori);
             }
             ?>
         </div>
-        
+
         <!-- Content Card -->
         <div class="content-card fade-in">
             <div class="d-flex justify-content-between align-items-center mb-4">
@@ -233,7 +233,7 @@ $jumlahKategori = mysqli_num_rows($queryKategori);
                                     <td><?php echo $jumlah; ?></td>
                                     <td><?php echo $data['nama']; ?></td>
                                     <td>
-                                        <a href="kategori-detail.php?q=<?php echo $data['id']; ?>" class="btn btn-info"><i class="fas fa-search"></i></a>
+                                        <a href="kategori-detail.php?q=<?php echo $data['id']; ?>" class="btn btn-info"> <i class="fas fa-eye"></i></a>
                                     </td>
                                 </tr>
                         <?php
@@ -257,7 +257,7 @@ $jumlahKategori = mysqli_num_rows($queryKategori);
             const elements = document.querySelectorAll('.fade-in');
             elements.forEach((el, index) => {
                 el.style.animationDelay = `${index * 0.1}s`;
-            });
+            })
         });
     </script>
 </body>

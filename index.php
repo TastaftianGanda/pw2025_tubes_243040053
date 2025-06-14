@@ -333,6 +333,10 @@ $queryUnit = mysqli_query($con, "SELECT id, nama_kendaraan, harga, foto, detail 
                 <div class="col-lg-8">
                     <p class="fs-5 mb-4">Selamat datang di RodaLancar Rent Car, solusi sewa mobil terpercaya untuk kebutuhan perjalanan pribadi, bisnis, maupun wisata Anda.</p>
                     <p class="mb-5">Kami hadir dengan komitmen memberikan layanan rental mobil yang mudah, aman, dan nyaman. Didukung oleh armada kendaraan yang terawat dan tim profesional, kami siap menemani perjalanan Anda di berbagai kota di Indonesia.</p>
+                    <p>Untuk Pemesanan Bisa Langsung Whatsapp Admin</p>
+                    <div class="feature-icon">
+                        <a href="https://wa.me/6285724522167"><i class="bi bi-whatsapp"></i></a>
+                    </div>
                 </div>
             </div>
 
